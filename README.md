@@ -6,89 +6,85 @@ While traditional models rely only on numerical features, real-world property va
 
 To capture both numerical and spatial signals, a multi-modal deep learning model is built that fuses:
 
-Tabular features processed using a neural network
+* Tabular features processed using a neural network
 
-Satellite images processed using a CNN (ResNet-18)
+* Satellite images processed using a CNN (ResNet-18)
 
-A unified regression head for final price prediction
+* A unified regression head for final price prediction
 
-The project also ensures model explainability using Grad-CAM, highlighting image regions that influence predictions.
+* The project also ensures model explainability using Grad-CAM, highlighting image regions that influence predictions.
 
 # 📊 Dataset Description
-## Tabular Data
+### Tabular Data
 
 The tabular dataset consists of numerical housing attributes such as:
 
-Living area and above-ground area
+* Living area and above-ground area
 
-Neighborhood statistics
+* Neighborhood statistics
 
-Location-based numerical indicators
+* Location-based numerical indicators
 
-The target variable is house price, which is log-transformed to reduce skewness and stabilize model training.
+* The target variable is house price, which is log-transformed to reduce skewness and stabilize model training.
 
-Satellite Images
+* Satellite Images
 
-RGB satellite images mapped to each property using its unique id
+* RGB satellite images mapped to each property using its unique id
 
-Images capture spatial context including:
+### Images capture spatial context including:
 
-Green cover
+* Green cover
 
-Road connectivity
+* Road connectivity
 
-Building density
+* Building density
 
-Urban vs suburban layout
+* Urban vs suburban layout
 
 # 🧠 Models Implemented
 ## 1️⃣ Tabular-Only Models (Baseline)
 
-Models trained using only tabular features
+* Models trained using only tabular features
 
-Used as baseline to evaluate the benefit of satellite imagery
+* Used as baseline to evaluate the benefit of satellite imagery
 
 ## 2️⃣ Tabular Neural Network
 
-A Multi-Layer Perceptron (MLP)
+* A Multi-Layer Perceptron (MLP)
 
-Learns non-linear relationships among tabular features
+* Learns non-linear relationships among tabular features
 
 ## 3️⃣ Combined Model (Final Model)
 
-CNN (ResNet-18) extracts visual features from satellite images
+* CNN (ResNet-18) extracts visual features from satellite images
 
-MLP extracts embeddings from tabular data
+* MLP extracts embeddings from tabular data
 
-Both embeddings are concatenated and passed to a regression head
+* Both embeddings are concatenated and passed to a regression head
 
-Outputs the final house price prediction
+* Outputs the final house price prediction
 
-This approach enables the model to jointly learn numerical + spatial representations.
+* This approach enables the model to jointly learn numerical + spatial representations.
 
 # 🏗️ Model Architecture (Fusion Strategy)
 
 Architecture Flow:
 
-Satellite Image → ResNet-18 → 512-dim visual embedding
-
-Tabular Features → MLP → 64-dim tabular embedding
-
-Feature Concatenation → Fully Connected Layers → Price Prediction
+![multimodal_architecture](https://github.com/user-attachments/assets/1b3ef69f-efc5-4052-aa5c-d74436eda8aa)
 
 This fusion allows the model to capture how visual context complements numerical property features.
 
 # ⚙️ Training Strategy
 
-Loss Function: Mean Squared Error (MSE)
+* Loss Function: Mean Squared Error (MSE)
 
-Optimizer: Adam
+* Optimizer: Adam
 
-Learning Rate: 3e-5
+* Learning Rate: 3e-5
 
-Early Stopping: Enabled to prevent overfitting
+* Early Stopping: Enabled to prevent overfitting
 
-CNN Backbone: Frozen pretrained ResNet-18 (ImageNet)
+* CNN Backbone: Frozen pretrained ResNet-18 (ImageNet)
 
 # 🔍 Model Explainability with Grad-CAM
 
@@ -102,11 +98,11 @@ Verifies that the model focuses on meaningful spatial features
 
 ### Observed Insights
 
-High-price properties: Attention on greenery, open spaces, waterfronts
+* High-price properties: Attention on greenery, open spaces, waterfronts
 
-Mid-price properties: Mixed attention on roads and residential layouts
+* Mid-price properties: Mixed attention on roads and residential layouts
 
-Low-price properties: Dense construction and limited green areas
+* Low-price properties: Dense construction and limited green areas
 
 This confirms that the model learns real-world visual cues, not noise.
 
@@ -199,6 +195,8 @@ Image downloading code
 
 Combined CNN + Tabular model
 
+best_model.pth contains the trained multimodal model weights used for final predictions and Grad-CAM analysis.
+
 Model evaluation (RMSE, R²)
 
 Early stopping
@@ -224,18 +222,13 @@ Grad-CAM is used to visualize which regions of satellite images influenced the m
 
 Insights derived include:
 
-Focus on greenery, waterfronts, road connectivity
+* Focus on greenery, waterfronts, road connectivity
 
-High-price regions show structured layouts
+* High-price regions show structured layouts
 
-Low-price regions show dense or irregular patterns
+* Low-price regions show dense or irregular patterns
 
-Visual examples are included in:
-
-model_training.ipynb
-
-
-### 👤 Author
+## 👤 Author
 
 Name: Akshay Vishwakarma
 Enrollment No: 22119005
