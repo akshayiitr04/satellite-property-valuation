@@ -143,3 +143,94 @@ satellite_project/
 ├── best_model.pth                     # Saved best trained model weights
 │
 ├── README.md                          # Project setup, instructions & documentation
+```
+
+---
+
+# ⚙️ Environment Setup
+
+#Install required libraries:
+
+```bash
+pip install torch torchvision pandas numpy matplotlib seaborn scikit-learn opencv-python tqdm pillow
+```
+# 🚀 How to Run the Project
+## 1️⃣ Download Satellite Images
+```bash
+ python data_fetcher.py
+```
+This downloads satellite images using the provided API and saves them in the images/ directory.
+
+## 2️⃣ Data Preprocessing & EDA
+
+#Open and run:
+```bash
+preprocessing.ipynb
+```
+
+This notebook performs:
+
+Data cleaning
+
+Feature engineering
+
+Exploratory Data Analysis (EDA)
+
+Correlation analysis
+
+Price distribution visualization
+
+## 3️⃣ Model Training & Evaluation
+
+Open and run:
+```bash
+model_training.ipynb
+```
+This notebook includes:
+
+Tabular-only model
+
+Tabular Neural Network
+
+Combined CNN + Tabular model
+
+Model evaluation (RMSE, R²)
+
+Early stopping
+
+Model checkpoint saving (best_model.pth)
+
+Grad-CAM visual explainability
+
+## 4️⃣ Final Predictions
+
+Final predictions are already generated and saved as:
+```bash
+22119005_final.csv
+```
+
+Format (strict):
+```bash
+id, predicted_price
+```
+## 🔍 Model Explainability (Grad-CAM)
+
+Grad-CAM is used to visualize which regions of satellite images influenced the model’s predictions.
+
+Insights derived include:
+
+Focus on greenery, waterfronts, road connectivity
+
+High-price regions show structured layouts
+
+Low-price regions show dense or irregular patterns
+
+Visual examples are included in:
+
+model_training.ipynb
+
+
+### 👤 Author
+
+Name: Akshay Vishwakarma
+Enrollment No: 22119005
