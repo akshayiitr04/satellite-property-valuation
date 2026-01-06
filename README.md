@@ -123,12 +123,12 @@ satellite_project/
 │
 ├── data/
 │   └── processed/
-│       ├── train_processed.csv        # Preprocessed training data
-│       └── test_processed.csv         # Preprocessed test data
+│       ├── train_processed.csv        # Processed training data
+│       └── test_processed.csv         # Processed test data
 │
 ├── images/
-│   ├── raw/                            # Original satellite images (id.jpg)
-│   └── processed/                     # Processed / resized images
+│   ├── raw/                            # Original train dataset satellite images (id.jpg)
+│   └── processed/                     # Original test dataset satellite images (id.jpg)
 │
 ├── data_fetcher.py                    # Script to download satellite images
 │
@@ -136,7 +136,9 @@ satellite_project/
 │
 ├── model_training.ipynb               # Model training (Tabular + CNN), evaluation, Grad-CAM
 │
-├── enrollno_final.csv                 # Final prediction file (id, predicted_price)
+├── 22119005_final.csv                 # Final prediction file (id, predicted_price)|
+│
+├── 22119005_report.pdf                 # Final prediction file (id, predicted_price)|
 │
 ├── best_model.pth                     # Saved best trained model weights
 │
