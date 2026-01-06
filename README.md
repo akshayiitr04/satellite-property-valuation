@@ -80,11 +80,25 @@ This fusion allows the model to capture how visual context complements numerical
 
 * Optimizer: Adam
 
-* Learning Rate: 3e-5
+* Learning Rate: 1e-4
+  
+* Weight decay=1e-4
 
 * Early Stopping: Enabled to prevent overfitting
 
-* CNN Backbone: Frozen pretrained ResNet-18 (ImageNet)
+* CNN Backbone: Frozen Pretrained ResNet-18 (ImageNet)
+
+  * We used a pretrained ResNet-18 model as the CNN backbone.
+
+  * Only the last convolutional block (layer4) was set as trainable, while all other layers were frozen (weights not updated during training).
+
+      Reasoning:
+
+      This approach falls under transfer learning.
+
+      The early layers capture general features such as edges and textures, so retraining them is unnecessary.
+
+      Fine-tuning only the last block allows the model to adapt high-level features to our satellite + tabular dataset, while keeping training fast and reducing the risk of overfitting.
 
 # 🔍 Model Explainability with Grad-CAM
 
