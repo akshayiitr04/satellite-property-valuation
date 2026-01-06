@@ -138,7 +138,7 @@ satellite_project/
 │
 ├── 22119005_final.csv                 # Final prediction file (id, predicted_price)|
 │
-├── 22119005_report.pdf                 # Final prediction file (id, predicted_price)|
+├── 22119005_report.pdf                 # Project Report (PDF) **Overview **EDA **Financial/Visual Insights **Architecture Diagram **Results 
 │
 ├── best_model.pth                     # Saved best trained model weights
 │
