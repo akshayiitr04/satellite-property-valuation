@@ -242,6 +242,18 @@ Insights derived include:
 
 * Low-price regions show dense or irregular patterns
 
+# 📄 Project Report
+
+* Overview: Modeling strategy combining satellite images and tabular data.
+
+* EDA: Price distribution analysis and satellite image visualization.
+
+* Insights: Impact of visual features (greenery, built-up areas) on prices.
+
+* Architecture: Hybrid CNN + tabular neural network design.
+
+Results: Performance comparison between tabular-only and combined models.
+
 ## 👤 Author
 
 Name: Akshay Vishwakarma
