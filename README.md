@@ -146,11 +146,11 @@ satellite_project/
 │
 ├── model_training.ipynb               # Model training (Tabular + CNN), evaluation, Grad-CAM
 │
-├── 22119005_final.csv                 # Final prediction file (id, predicted_price)|
+├── 22119005_final.csv                 # Final prediction file (id, predicted_price)
 │
 ├── 22119005_report.pdf                 # Project Report (PDF) **Overview **EDA **Financial/Visual Insights **Architecture Diagram **Results 
 │
-├── best_model.pth                     # Saved best trained model weights
+├── best_model.pth                     # Saved best trained model weights (large file size so not uploaded)
 │
 ├── README.md                          # Project setup, instructions & documentation
 ```
@@ -171,7 +171,7 @@ pip install torch torchvision pandas numpy matplotlib seaborn scikit-learn openc
 ```bash
  python data_fetcher.py
 ```
-This downloads satellite images using the ESRI and saves them in the directory.
+Script to download satellite images using the ESRI and saves them in the directory.
 
 ## 2️⃣Data Preprocessing & EDA
 
@@ -179,23 +179,23 @@ Open and run:
 ```bash
 preprocessing.ipynb
 ```
-This notebook performs:
+* This notebook performs:
 
-Data cleaning
+  * Data cleaning
 
-Feature engineering
+  * Feature engineering
 
-Exploratory Data Analysis (EDA)
+  * Exploratory Data Analysis (EDA)
 
-Correlation analysis
+  * Correlation analysis
 
-Price distribution visualization
+  * Price distribution visualization
 
-Feature engineering
+  * Feature engineering
 
-Tabular-only model
+  * Tabular-only model
 
-Tabular Neural Network
+  * Tabular Neural Network
 
 ## 3️⃣Model Training & Evaluation
 
