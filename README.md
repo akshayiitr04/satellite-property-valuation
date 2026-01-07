@@ -256,5 +256,5 @@ Results: Performance comparison between tabular-only and combined models.
 
 ## 👤 Author
 
-Name: Akshay Vishwakarma
+Name: Akshay Vishwakarma <br>
 Enrollment No: 22119005
