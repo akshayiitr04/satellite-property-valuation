@@ -203,21 +203,21 @@ Open and run:
 ```bash
 model_training.ipynb
 ```
-This notebook includes:
+* This notebook includes:
 
-Image downloading code
+   * Image downloading code
 
-Combined CNN + Tabular model
+   * Combined CNN + Tabular model
 
-best_model.pth contains the trained multimodal model weights used for final predictions and Grad-CAM analysis.
+   * Best_model.pth contains the trained multimodal model weights used for final predictions and Grad-CAM analysis.
 
-Model evaluation (RMSE, R²)
+   * Model evaluation (RMSE, R²)
 
-Early stopping
+   * Early stopping
 
-Model checkpoint saving (best_model.pth)
+   * Model checkpoint saving (best_model.pth)
 
-Grad-CAM visual explainability
+   * Grad-CAM visual explainability
 
 ## 4️⃣Final Predictions
 
@@ -226,7 +226,7 @@ Final predictions are already generated and saved as:
 22119005_final.csv
 ```
 
-Format (strict):
+Format:
 ```bash
 id, predicted_price
 ```
